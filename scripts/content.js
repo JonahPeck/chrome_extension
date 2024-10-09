@@ -17,3 +17,5 @@ if (article) {
 
     (date ?? heading).insertAdjacentElement("afterend", badge);
 }
+
+//using the nces website to verify based on pulled data from SF
