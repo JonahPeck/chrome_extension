@@ -19,3 +19,4 @@ if (article) {
 }
 
 //using the nces website to verify based on pulled data from SF
+//using the chrome extension as a way to check data?
