@@ -11,3 +11,4 @@ verify nces info for sites and enrollment
 
 check time spent on tabs for average time spent per contact -->
 
+<!-- using playwright to write a script to create a new contact everytime for SNAF accounts -->
