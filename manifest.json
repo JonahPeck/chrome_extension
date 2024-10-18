@@ -1,13 +1,24 @@
 {
     "manifest_version": 3,
-    "name": "Prospecting Assistant",
+    "name": "Food Director Data Scraper",
     "version": "1.0",
     "description": "Help with finding food service directors and other useful information through the assitance of AI",
     "action":{
         "default_popup": "popup.html"
     },
     "permissions": [
-        "tabs"
+        "tabs",
+        "activeTab",
+        "scripting"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches":["<all_urls>"],
+            "js": ["content.js"]
+        }
     ]
 
 }
