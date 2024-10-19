@@ -1,14 +1,13 @@
-const getHeadline = () => {
 
-    const headline = document.querySelector('h1');
+window.addEventListener('DOMContentLoaded', () => {
+    const element = document.querySelector('lightnight-formatted-text');
 
-    return headline ? headline.innerText: "No headline found";
-    
-};
+    if (element) {
+        const stateText = element.textContent;
+        console.log("State:", stateText);
 
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.action === 'getHeadLine') {
-        const headline = getHeadline();
-        sendResponse({ headline });
+        chrome.runtime.sendMessage({action: "extractState", state: stateText});
+    } else {
+        console.log("Element not found!");
     }
 });
