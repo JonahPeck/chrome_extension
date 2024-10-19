@@ -8,6 +8,7 @@ document.getElementById('scrapeBtn').addEventListener('click', function() {
             function: () => {
                 // Try to find an <h1> element on the page
                 const foodDirector = document.querySelector('h1')?.innerText || 'No data found';
+                console.log(foodDirector);
                 return foodDirector;
             }
         }, (results) => {
