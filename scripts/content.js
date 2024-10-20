@@ -1,13 +1,19 @@
-
 window.addEventListener('DOMContentLoaded', () => {
-    const element = document.querySelector('lightnight-formatted-text');
+    const slotElement = document.querySelector('slot');
 
-    if (element) {
-        const stateText = element.textContent;
-        console.log("State:", stateText);
+    if (slotElement) {
+        const formattedTextElement = slotElement.querySelector('lightning-formatted-text');
 
-        chrome.runtime.sendMessage({action: "extractState", state: stateText});
+        if (formattedTextElement) {
+            const stateText = formattedTextElement.textContent.trim();
+            console.log("State found:", stateText);
+
+            // Send a message to the Chrome extension with the extracted state
+            chrome.runtime.sendMessage({ action: "extractState", state: stateText });
+        } else {
+            console.log("Formatted text element not found!");
+        }
     } else {
-        console.log("Element not found!");
+        console.log("Slot element not found!");
     }
 });

@@ -10,7 +10,7 @@
     "default_popup": "popup.html"
     },
     "background": {
-    "service_worker": "background.js"
+    "service_worker": "scripts/background.js"
     },
     "content_scripts": [
     {
@@ -19,7 +19,7 @@
             "https://*.salesforce.com/*",
             "https://*.lightning.force.com/*"
         ], 
-        "js": ["content.js"]
+        "js": ["scripts/content.js"]
     }
     ]
 }
